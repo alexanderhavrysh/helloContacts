@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - changeSet:
+      id: b64c5356-49d9-4da4-8ac7-1a701f001571
+      author: havrysh
+      comment: test migration
+      sql: SELECT 1
