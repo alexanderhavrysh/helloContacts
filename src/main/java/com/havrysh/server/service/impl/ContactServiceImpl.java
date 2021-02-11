@@ -57,9 +57,7 @@ public class ContactServiceImpl implements ContactService {
 					.map(contactConverter::toEntity)
 					.map(contactRepository::save)
 					.map(contactConverter::fromEntity)
-					.orElseThrow(NotFoundException::new);
-		} catch(NotFoundException nfe) {
-			throw nfe;
+					.orElseThrow(NullPointerException::new);
 		} catch(Exception ex) {
 			throw new ServerException(Contact.class, null, "Unable to save contact", ex);
 		}
