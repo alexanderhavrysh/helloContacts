@@ -8,5 +8,5 @@ cache:
     - $HOME/.m2
 
 script:
-  - ./mvnw clean install
-  - ./mvnw test
+  - mvn clean install
+  - mvn test
