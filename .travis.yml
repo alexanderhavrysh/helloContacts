@@ -8,6 +8,5 @@ cache:
     - $HOME/.m2
 
 script:
-  - java --version
-  - ./mvn clean install
-  - ./mvn test
+  - ./mvnw clean install
+  - ./mvnw test
