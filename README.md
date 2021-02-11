@@ -1,4 +1,4 @@
-# helloContacts
+# helloContacts [![Build Status](https://travis-ci.com/alexanderhavrysh/helloContacts.svg?branch=main)](https://travis-ci.com/alexanderhavrysh/helloContacts)
 
 Для запуска создайте БД с таблицей Contact и полями id, name, created, updated, затем подключите в resourse/application.yaml.
 Затем выполните команду mvn clean spring-boot:run
