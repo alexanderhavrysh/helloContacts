@@ -30,12 +30,11 @@ public class ContactServiceImpl implements ContactService {
 	private final ContactConverter contactConverter;
 	
 	@Override
-	@Cacheable
 	public List<ContactDto> getContactsByPattern(String regex) {
 		try {
 			Pattern pattern = Pattern.compile(regex);
 			
-			return contactRepository.findAll()
+			return getAllContacts()
 					.stream()
 					.filter(contact -> !pattern.matcher(contact.getName()).matches())
 					.map(contactConverter::fromEntity)
@@ -43,6 +42,11 @@ public class ContactServiceImpl implements ContactService {
 		} catch(Exception ex) {
 			throw new ServerException(Contact.class, null, String.format("Unable to get contact by pattern [%s]", regex), ex);
 		}
+	}
+	
+	@Cacheable
+	public List<Contact> getAllContacts() {
+		return contactRepository.findAll();
 	}
 	
 	@Override

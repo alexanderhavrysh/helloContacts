@@ -1,17 +1,19 @@
 package com.havrysh.server.entity;
 
-import java.util.Date;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Contact {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,11 +21,4 @@ public class Contact {
 	
 	@NotNull
 	private String name;
-	
-	@CreationTimestamp
-	@Column(nullable = false, updatable = false)
-	protected Date created;
-	
-	@UpdateTimestamp
-	protected Date updated;
 }

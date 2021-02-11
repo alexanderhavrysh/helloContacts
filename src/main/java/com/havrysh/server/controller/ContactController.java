@@ -13,8 +13,8 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@Api(tags = "Contact API")
 @RequestMapping("/hello")
+@Api(tags = "Contact API")
 public class ContactController {
 	private final ContactService contactService;
 	
